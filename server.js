@@ -23,22 +23,22 @@ app.use(express.static("website"));
 // Setup Server
 const port = 3600;
 app.listen(port, () => {
-  console.log(`running on localhost: ${port}`);
+    console.log(`running on localhost: ${port}`);
 });
 
 //creating a GET route that returns the projectData object in the server code
 app.get("/all", (req, res) => {
-  console.log(projectData);
-  res.send(projectData);
+    console.log(projectData);
+    res.send(projectData);
 });
 
 //creating a POST route that adds incoming data to projectData
 app.post("/add", (req, res) => {
-  console.log(req.body);
-  projectData = {
-    temperature: req.body.temperature,
-    date: req.body.date,
-    userResponse: req.body.userResponse,
-  };
-  res.send(projectData);
+    console.log(req.body);
+    projectData = {
+        temperature: req.body.temperature,
+        date: req.body.date,
+        userResponse: req.body.userResponse,
+    };
+    res.send(projectData);
 });
